@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="RunNopCommerce.xsd" parallel="false" name="NopCommerce">
-  <test name="Test">
+<suite parallel="false" name="NopCommerce">
+  <test name="User_Page" description="Test case of user page">
     <classes>
-      <class name=""/>
+      <class name="com.nopcommerce.user.User_01_Register"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
