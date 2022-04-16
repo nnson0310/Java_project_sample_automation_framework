@@ -13,9 +13,9 @@ import java.util.Set;
 
 public class BasePage {
 
-    private int explicitWaitTimeout = 30;
+    private int explicitWaitTimeout = 20;
 
-    public BasePage getBasePage() {
+    public static BasePage getBasePage() {
         return new BasePage();
     }
 
