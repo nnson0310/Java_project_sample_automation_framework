@@ -7,8 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -16,20 +14,16 @@ import java.util.concurrent.TimeUnit;
 public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
 
     /*
-    * Có 3 cách để apply BasePage class để dùng được các hàm của BasePage
-    * Trong BasePage chứa các common method để tương tác với WebBrowser va WebElement
-    * C1: khởi tạo đối tượng
-    * C2: dùng static method getBasePage()
-    * C3: kế thừa class BasePage
-    * Chỉ nên dùng cách 3 vì đây là cách tối ưu nhất
-    * */
+     * Có 3 cách để apply BasePage class để dùng được các hàm của BasePage
+     * Trong BasePage chứa các common method để tương tác với WebBrowser va WebElement
+     * C1: khởi tạo đối tượng
+     * C2: dùng static method getBasePage()
+     * C3: kế thừa class BasePage
+     * Chỉ nên dùng cách 3 vì đây là cách tối ưu nhất
+     * */
     String projectPath = System.getProperty("user.dir");
     WebDriver driver;
     // BasePage basePage;
-
-    //khoi tao doi tuong cua 2 trang home va register
-    HomePageObject homePageObject;
-    RegisterPageObject registerPageObject;
 
     private String firstName, lastName, email, password;
 
