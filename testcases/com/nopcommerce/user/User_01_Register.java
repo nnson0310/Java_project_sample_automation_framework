@@ -55,7 +55,7 @@ public class User_01_Register extends BasePage {
 
     // tạo mã giả trước, sau đó generate method bên phía HomePageObject class
     @Test
-    public void TC_01_Empty_Data() {
+    public void Register_01_Empty_Data() {
 
         homePageObject.clickRegisterLink();
 
@@ -69,7 +69,7 @@ public class User_01_Register extends BasePage {
     }
 
     @Test
-    public void TC_02_Invalid_Email() {
+    public void Register_02_Invalid_Email() {
         homePageObject.clickRegisterLink();
 
         registerPageObject.inputFirstName(firstName);
@@ -84,7 +84,7 @@ public class User_01_Register extends BasePage {
     }
 
     @Test
-    public void TC_03_Valid_Info() {
+    public void Register_03_Valid_Info() {
 
         homePageObject.clickRegisterLink();
 
@@ -100,7 +100,7 @@ public class User_01_Register extends BasePage {
     }
 
     @Test
-    public void TC_04_Existed_Email() {
+    public void Register_04_Existed_Email() {
 
         registerPageObject.clickLogoutLink();
 
@@ -118,7 +118,7 @@ public class User_01_Register extends BasePage {
     }
 
     @Test
-    public void TC_05_Password_Under_Six_Characters() {
+    public void Register_05_Password_Under_Six_Characters() {
 
         homePageObject.clickRegisterLink();
 
@@ -135,7 +135,7 @@ public class User_01_Register extends BasePage {
     }
 
     @Test
-    public void TC_06_Confirm_Password_Unmatch() {
+    public void Register_06_Confirm_Password_Unmatch() {
 
         homePageObject.clickRegisterLink();
 
