@@ -1,10 +1,11 @@
 package com.nopcommerce.user;
 
+import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
@@ -13,10 +14,9 @@ import pageObjects.RegisterPageObject;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class User_02_Login {
-    private WebDriver driver;
+public class User_02_Login extends BaseTest {
 
-    private String projectPath = System.getProperty("user.dir");
+    private WebDriver driver;
 
     private HomePageObject homePage;
 
@@ -26,16 +26,13 @@ public class User_02_Login {
 
     private String firstName, lastName, email, password;
 
+    @Parameters({"browser"})
     @BeforeClass
-    public void setUp() {
-        System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+    public void setUp(String browserName) {
 
-        driver = new FirefoxDriver();
+        driver = getBrowserDriver(browserName);
 
         driver.get("https://demo.nopcommerce.com/");
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
 
         firstName = "Son";
         lastName = "Nguyen";
