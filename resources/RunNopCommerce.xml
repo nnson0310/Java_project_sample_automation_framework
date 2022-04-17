@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="NopCommerce">
-  <test name="User_Page" description="Test case of user page">
+
+  <test name="Firefox" description="Run on Firefox">
+    <parameter name="browser" value="firefox"></parameter>
     <classes>
       <class name="com.nopcommerce.user.User_02_Login"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+
+  <test name="Chrome" description="Run on Chrome">
+    <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.User_02_Login"/>
+    </classes>
+  </test>
+
+  <test name="Edge" description="Run on Edge">
+    <parameter name="browser" value="edge"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.User_02_Login"/>
+    </classes>
+  </test>
+
+</suite>
