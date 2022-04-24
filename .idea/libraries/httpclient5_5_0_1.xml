@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="httpclient5-5.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WebDriverManager/httpclient5-5.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

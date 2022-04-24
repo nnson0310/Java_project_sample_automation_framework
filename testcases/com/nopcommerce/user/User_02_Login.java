@@ -12,7 +12,6 @@ import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class User_02_Login extends BaseTest {
 

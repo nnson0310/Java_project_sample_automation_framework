@@ -43,5 +43,17 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="commons-codec-1.13" level="project" />
+    <orderEntry type="library" name="commons-collections4-4.3" level="project" />
+    <orderEntry type="library" name="commons-compress-1.20" level="project" />
+    <orderEntry type="library" name="commons-io-2.7" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.11" level="project" />
+    <orderEntry type="library" name="gson-2.8.6" level="project" />
+    <orderEntry type="library" name="httpclient5-5.0.1" level="project" />
+    <orderEntry type="library" name="httpcore5-5.0.1" level="project" />
+    <orderEntry type="library" name="jarchivelib-1.0.0" level="project" />
+    <orderEntry type="library" name="jsoup-1.13.1" level="project" />
+    <orderEntry type="library" name="slf4j-api-1.7.30" level="project" />
+    <orderEntry type="library" name="webdrivermanager-4.2.0" level="project" />
   </component>
 </module>
