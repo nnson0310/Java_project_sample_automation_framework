@@ -1,21 +1,31 @@
 package commons;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
+    /*
+    * Headless browser ám chỉ việc trình duyệt được chạy ngầm mà k hiển
+    * thị giao diện. Chủ yếu dùng trong
+    * + test UI frontend
+    * + crawl data (data analyst...)
+    * */
     private WebDriver driver;
 
     private String projectPath = System.getProperty("user.dir");
 
     public WebDriver getBrowserDriver(String browserName) {
         if (browserName.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+//            System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else if (browserName.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
@@ -23,7 +33,24 @@ public class BaseTest {
         } else if (browserName.equals("edge")) {
             System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
             driver = new EdgeDriver();
-        } else {
+        } else if (browserName.equals("h_firefox")) {
+            System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+
+            //set up headless options for firefox browser
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
+            options.addArguments("--window-size=1920,1200");
+            driver = new FirefoxDriver(options);
+        }
+        else if (browserName.equals("brave")) {
+            System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+
+            ChromeOptions options = new ChromeOptions();
+            options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+
+            driver = new ChromeDriver(options);
+        }
+        else {
             throw new RuntimeException("Browser name is invalid");
         }
 
