@@ -4,36 +4,36 @@
   <test name="Firefox" description="Run on Firefox">
     <parameter name="browser" value="firefox"></parameter>
     <classes>
-      <class name="com.nopcommerce.user.User_02_Login_Page_Factory"/>
+      <class name="com.nopcommerce.user.User_02_Login"/>
     </classes>
   </test>
 
-<!--  <test name="Chrome" description="Run on Chrome">-->
-<!--    <parameter name="browser" value="chrome"></parameter>-->
-<!--    <classes>-->
-<!--      <class name="com.nopcommerce.user.User_02_Login"/>-->
-<!--    </classes>-->
-<!--  </test>-->
+  <test name="Chrome" description="Run on Chrome">
+    <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.User_02_Login"/>
+    </classes>
+  </test>
 
-<!--  <test name="Edge" description="Run on Edge">-->
-<!--    <parameter name="browser" value="edge"></parameter>-->
-<!--    <classes>-->
-<!--      <class name="com.nopcommerce.user.User_02_Login"/>-->
-<!--    </classes>-->
-<!--  </test>-->
+  <test name="Edge" description="Run on Edge">
+    <parameter name="browser" value="edge"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.User_02_Login"/>
+    </classes>
+  </test>
 
-<!--  <test name="Headless Firefox" description="Run on Headless Firefox">-->
-<!--    <parameter name="browser" value="h_firefox"></parameter>-->
-<!--    <classes>-->
-<!--      <class name="com.nopcommerce.user.User_02_Login"/>-->
-<!--    </classes>-->
-<!--  </test>-->
+  <test name="Headless Firefox" description="Run on Headless Firefox">
+    <parameter name="browser" value="h_firefox"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.User_02_Login"/>
+    </classes>
+  </test>
 
-<!--  <test name="Brave" description="Run on Brave">-->
-<!--    <parameter name="browser" value="brave"></parameter>-->
-<!--    <classes>-->
-<!--      <class name="com.nopcommerce.user.User_02_Login"/>-->
-<!--    </classes>-->
-<!--  </test>-->
+  <test name="Brave" description="Run on Brave">
+    <parameter name="browser" value="brave"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.User_02_Login"/>
+    </classes>
+  </test>
 
 </suite>

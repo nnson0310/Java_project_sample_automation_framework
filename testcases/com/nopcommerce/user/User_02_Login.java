@@ -9,9 +9,12 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.PageInitManager;
 import pageObjects.RegisterPageObject;
 
 import java.util.Random;
+
+import static pageObjects.PageInitManager.getLoginPageObject;
 
 public class User_02_Login extends BaseTest {
 
@@ -20,6 +23,8 @@ public class User_02_Login extends BaseTest {
     private HomePageObject homePage;
 
     private RegisterPageObject registerPage;
+
+    private PageInitManager pageInitManager;
 
     private LoginPageObject loginPage;
 
@@ -31,7 +36,7 @@ public class User_02_Login extends BaseTest {
 
         driver = getBrowserDriver(browserName);
 
-        driver.get("https://demo.nopcommerce.com/");
+        pageInitManager = new PageInitManager();
 
         firstName = "Son";
         lastName = "Nguyen";
@@ -39,12 +44,12 @@ public class User_02_Login extends BaseTest {
         password = "123456";
 
         //khoi tao doi tuong homePageObject
-        homePage = new HomePageObject(driver);
+        homePage = pageInitManager.getHomePageObject(driver);
         homePage.clickRegisterLink();
 
         //pre-conditon - set up registered account for login with registered email test case
         //moi lan chuyen page deu phai khoi tao pageObject moi
-        registerPage = new RegisterPageObject(driver);
+        registerPage = pageInitManager.getRegisterPageObject(driver);
 
         registerPage.inputFirstName(firstName);
         registerPage.inputLastName(lastName);
@@ -63,7 +68,7 @@ public class User_02_Login extends BaseTest {
     public void Login_01_Empty_Data() {
         homePage.clickLoginLink();
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = getLoginPageObject(driver);
 
         loginPage.clickLoginButton();
 
@@ -74,7 +79,7 @@ public class User_02_Login extends BaseTest {
     public void Login_02_Invalid_Email() {
         homePage.clickLoginLink();
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = getLoginPageObject(driver);
 
         loginPage.inputEmailTextBox("son@");
         loginPage.inputPasswordTextBox(password);
@@ -86,7 +91,7 @@ public class User_02_Login extends BaseTest {
     public void Login_03_Unregistered_Email() {
         homePage.clickLoginLink();
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = getLoginPageObject(driver);
 
         loginPage.inputEmailTextBox("son@gmail.com");
         loginPage.inputPasswordTextBox("123456");
@@ -99,7 +104,7 @@ public class User_02_Login extends BaseTest {
     public void Login_04_Registered_Email_And_Empty_Password() {
         homePage.clickLoginLink();
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = getLoginPageObject(driver);
 
         loginPage.inputEmailTextBox(email);
         loginPage.clickLoginButton();
@@ -111,7 +116,7 @@ public class User_02_Login extends BaseTest {
     public void Login_05_Registered_Email_And_Invalid_Password() {
         homePage.clickLoginLink();
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = getLoginPageObject(driver);
 
         loginPage.inputEmailTextBox(email);
         loginPage.inputPasswordTextBox(email);
@@ -124,7 +129,7 @@ public class User_02_Login extends BaseTest {
     public void Login_06_Valid_Credentials() {
         homePage.clickLoginLink();
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = getLoginPageObject(driver);
 
         loginPage.inputEmailTextBox(email);
         loginPage.inputPasswordTextBox(password);
@@ -137,10 +142,5 @@ public class User_02_Login extends BaseTest {
     @AfterClass
     public void tearDown() {
         driver.quit();
-    }
-
-    public int generateRandomNumber() {
-        Random random = new Random();
-        return random.nextInt(9999);
     }
 }

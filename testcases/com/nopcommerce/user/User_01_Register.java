@@ -9,11 +9,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
+import commons.BaseTest;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class User_01_Register extends BasePage {
+public class User_01_Register extends BaseTest {
 
     /*
      * Có 3 cách để apply BasePage class để dùng được các hàm của BasePage
@@ -154,10 +155,5 @@ public class User_01_Register extends BasePage {
     @AfterClass
     public void tearDown() {
         driver.quit();
-    }
-
-    public int generateRandomNumber() {
-        Random random = new Random();
-        return random.nextInt(9999);
     }
 }

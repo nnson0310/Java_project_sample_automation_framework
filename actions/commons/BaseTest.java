@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -22,20 +23,27 @@ public class BaseTest {
 
     private String projectPath = System.getProperty("user.dir");
 
+    public int generateRandomNumber() {
+        Random random = new Random();
+        return random.nextInt(9999);
+    }
+
     public WebDriver getBrowserDriver(String browserName) {
         if (browserName.equals("firefox")) {
-//            System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+            // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else if (browserName.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+            // System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browserName.equals("edge")) {
-            System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
+            //System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
+            WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         } else if (browserName.equals("h_firefox")) {
-            System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-
+            // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
             //set up headless options for firefox browser
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless");
@@ -43,7 +51,8 @@ public class BaseTest {
             driver = new FirefoxDriver(options);
         }
         else if (browserName.equals("brave")) {
-            System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+            // System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
 
             ChromeOptions options = new ChromeOptions();
             options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
@@ -54,6 +63,7 @@ public class BaseTest {
             throw new RuntimeException("Browser name is invalid");
         }
 
+        driver.get("https://demo.nopcommerce.com/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
