@@ -123,39 +123,65 @@ public class BasePage {
         }
     }
 
-    private By getByXpath(String xpathLocator) {
-        return By.xpath(xpathLocator);
+    private String getLocatorValue(String locator) {
+        return locator.substring(locator.indexOf("=") + 1);
     }
 
-    private WebElement getElement(WebDriver driver, String xpathLocator) {
-        return driver.findElement(getByXpath(xpathLocator));
+    private By getByLocator(String locatorType) {
+        By by = null;
+
+        System.out.println("Locator is " + locatorType);
+
+        if (locatorType.startsWith("id=") || locatorType.startsWith("ID=") || locatorType.startsWith("Id=")) {
+            by = By.id(getLocatorValue(locatorType));
+        }
+        else if (locatorType.startsWith("css=") || locatorType.startsWith("CSS=") || locatorType.startsWith("Css=")) {
+            by = By.cssSelector(getLocatorValue(locatorType));
+        }
+        else if (locatorType.startsWith("class=") || locatorType.startsWith("CLASS=") || locatorType.startsWith("Class=")) {
+            by = By.className(getLocatorValue(locatorType));
+        }
+        else if (locatorType.startsWith("name=") || locatorType.startsWith("NAME=") || locatorType.startsWith("Name=")) {
+            by = By.name(getLocatorValue(locatorType));
+        }
+        else if (locatorType.startsWith("xpath=") || locatorType.startsWith("XPATH=") || locatorType.startsWith("Xpath=")) {
+            by = By.xpath(getLocatorValue(locatorType));
+        }
+        else {
+            throw new RuntimeException("Locator type is invalid");
+        }
+        return by;
     }
 
-    private List<WebElement> getElements(WebDriver driver, String xpathLocator) {
-        return driver.findElements(getByXpath(xpathLocator));
+    private WebElement getElement(WebDriver driver, String locator) {
+        return driver.findElement(getByLocator(locator));
     }
 
-    protected void clickToElement(WebDriver driver, String xpathLocator) {
-        getElement(driver, xpathLocator).click();
+    private List<WebElement> getElements(WebDriver driver, String locator) {
+        return driver.findElements(getByLocator(locator));
     }
 
-    protected void sendKeyToElement(WebDriver driver, String xpathLocator, String str) {
-        getElement(driver, xpathLocator).sendKeys(str);
+    protected void clickToElement(WebDriver driver, String locator) {
+        getElement(driver, locator).click();
     }
 
-    protected void selectItemInDropDown(WebDriver driver, String xpathLocator, String text) {
-        Select select = new Select(getElement(driver, xpathLocator));
+    protected void sendKeyToElement(WebDriver driver, String locator, String str) {
+        getElement(driver, locator).sendKeys(str);
+    }
+
+    protected void selectItemInDropDown(WebDriver driver, String locator, String text) {
+        Select select = new Select(getElement(driver, locator));
         select.selectByVisibleText(text);
     }
 
-    protected void getSelectedItemInDropDown(WebDriver driver, String xpathLocator) {
-        Select select = new Select(getElement(driver, xpathLocator));
+    protected void getSelectedItemInDropDown(WebDriver driver, String locator) {
+        Select select = new Select(getElement(driver, locator));
 
         select.getFirstSelectedOption();
     }
 
-    protected boolean isDropdownMultiple(WebDriver driver, String xpathLocator) {
-        Select select = new Select(getElement(driver, xpathLocator));
+    protected boolean isDropdownMultiple(WebDriver driver, String locator) {
+        Select select = new Select(getElement(driver, locator));
 
         return select.isMultiple();
     }
@@ -165,7 +191,7 @@ public class BasePage {
         sleepInSecond(1);
 
         explicitWait =  new WebDriverWait(driver, explicitWaitTimeout);
-        List<WebElement> elements = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(childItemLocator)));
+        List<WebElement> elements = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childItemLocator)));
 
         for(WebElement element: elements) {
             if (element.getText().trim().equals(expectedItem)) {
@@ -180,28 +206,28 @@ public class BasePage {
         }
     }
 
-    protected String getAttributeValue(WebDriver driver, String xpathLocator, String attributeName) {
-        return getElement(driver, xpathLocator).getAttribute(attributeName);
+    protected String getAttributeValue(WebDriver driver, String locator, String attributeName) {
+        return getElement(driver, locator).getAttribute(attributeName);
     }
 
-    protected String getTextElement(WebDriver driver, String xpathLocator) {
-        return getElement(driver, xpathLocator).getText();
+    protected String getTextElement(WebDriver driver, String locator) {
+        return getElement(driver, locator).getText();
     }
 
-    protected String getCssValue(WebDriver driver, String xpathLocator, String cssSelector) {
-        return getElement(driver, xpathLocator).getCssValue(cssSelector);
+    protected String getCssValue(WebDriver driver, String locator, String cssSelector) {
+        return getElement(driver, locator).getCssValue(cssSelector);
     }
 
     protected String getHexColorFromRgbColor(String rgbaColor) {
         return Color.fromString(rgbaColor).asHex();
     }
 
-    protected int getElementSize(WebDriver driver, String xpathLocator) {
-        return getElements(driver, xpathLocator).size();
+    protected int getElementSize(WebDriver driver, String locator) {
+        return getElements(driver, locator).size();
     }
 
-    protected void checkCheckboxOrRadio(WebDriver driver, String xpathLocator) {
-        List<WebElement> elements = getElements(driver, xpathLocator);
+    protected void checkCheckboxOrRadio(WebDriver driver, String locator) {
+        List<WebElement> elements = getElements(driver, locator);
 
         for (WebElement element:  elements) {
             if (element.isSelected()) {
@@ -211,8 +237,8 @@ public class BasePage {
         }
     }
 
-    protected void uncheckCheckboxOrRadio(WebDriver driver, String xpathLocator) {
-        List<WebElement> elements = getElements(driver, xpathLocator);
+    protected void uncheckCheckboxOrRadio(WebDriver driver, String locator) {
+        List<WebElement> elements = getElements(driver, locator);
 
         for (WebElement element:  elements) {
             if (!element.isSelected()) {
@@ -222,29 +248,29 @@ public class BasePage {
         }
     }
 
-    protected boolean isElementDisplayed(WebDriver driver, String xpathLocator) {
-        return getElement(driver, xpathLocator).isDisplayed();
+    protected boolean isElementDisplayed(WebDriver driver, String locator) {
+        return getElement(driver, locator).isDisplayed();
     }
 
-    protected boolean isElementEnabled(WebDriver driver, String xpathLocator) {
-        return getElement(driver, xpathLocator).isEnabled();
+    protected boolean isElementEnabled(WebDriver driver, String locator) {
+        return getElement(driver, locator).isEnabled();
     }
 
-    protected boolean isElementSelected(WebDriver driver, String xpathLocator) {
-        return getElement(driver, xpathLocator).isSelected();
+    protected boolean isElementSelected(WebDriver driver, String locator) {
+        return getElement(driver, locator).isSelected();
     }
 
-    protected void switchToFrame(WebDriver driver, String xpathLocator) {
-        driver.switchTo().frame(getElement(driver, xpathLocator));
+    protected void switchToFrame(WebDriver driver, String locator) {
+        driver.switchTo().frame(getElement(driver, locator));
     }
 
     protected void switchToDefaultContent(WebDriver driver) {
         driver.switchTo().defaultContent();
     }
 
-    protected void hoverToElement(WebDriver driver, String xpathLocator) {
+    protected void hoverToElement(WebDriver driver, String locator) {
         action = new Actions(driver);
-        action.moveToElement(getElement(driver, xpathLocator)).perform();
+        action.moveToElement(getElement(driver, locator)).perform();
     }
 
     protected String getInnerText(WebDriver driver) {
@@ -257,28 +283,28 @@ public class BasePage {
         jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
 
-    protected void highlightElement(WebDriver driver, String xpathLocator) {
+    protected void highlightElement(WebDriver driver, String locator) {
         jsExecutor = (JavascriptExecutor) driver;
-        WebElement element = getElement(driver, xpathLocator);
+        WebElement element = getElement(driver, locator);
         String originalStyle = element.getAttribute("style");
         jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 2px solid red; border-style: dashed;");
         sleepInSecond(1);
         jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
     }
 
-    protected void clickToElementByJS(WebDriver driver, String xpathLocator) {
+    protected void clickToElementByJS(WebDriver driver, String locator) {
         jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].click();", getElement(driver, xpathLocator));
+        jsExecutor.executeScript("arguments[0].click();", getElement(driver, locator));
     }
 
-    protected void scrollToElement(WebDriver driver, String xpathLocator) {
+    protected void scrollToElement(WebDriver driver, String locator) {
         jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getElement(driver, xpathLocator));
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getElement(driver, locator));
     }
 
-    protected void removeAttributeInDOM(WebDriver driver, String xpathLocator, String attributeRemove) {
+    protected void removeAttributeInDOM(WebDriver driver, String locator, String attributeRemove) {
         jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');", getElement(driver, xpathLocator));
+        jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');", getElement(driver, locator));
     }
 
     protected boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
@@ -306,45 +332,45 @@ public class BasePage {
         return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
     }
 
-    protected String getElementValidationMessage(WebDriver driver, String xpathLocator) {
+    protected String getElementValidationMessage(WebDriver driver, String locator) {
         jsExecutor = (JavascriptExecutor) driver;
-        return (String) jsExecutor.executeScript("return arguments[0].validationMessage;", getElement(driver, xpathLocator));
+        return (String) jsExecutor.executeScript("return arguments[0].validationMessage;", getElement(driver, locator));
     }
 
-    protected boolean isImageLoaded(WebDriver driver, String xpathLocator) {
+    protected boolean isImageLoaded(WebDriver driver, String locator) {
         jsExecutor = (JavascriptExecutor) driver;
-        boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", getElement(driver, xpathLocator));
+        boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", getElement(driver, locator));
         return status;
     }
 
-    protected void waitForElementVisible(WebDriver driver, String xpathLocator) {
+    protected void waitForElementVisible(WebDriver driver, String locator) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
 
-        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xpathLocator)));
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
     }
 
-    protected void waitForAllElementVisible(WebDriver driver, String xpathLocator) {
+    protected void waitForAllElementVisible(WebDriver driver, String locator) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
 
-        explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xpathLocator)));
+        explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locator)));
     }
 
-    protected void waitForElementClickable(WebDriver driver, String xpathLocator) {
+    protected void waitForElementClickable(WebDriver driver, String locator) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
 
-        explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
+        explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
     }
 
-    protected void waitForElementInvisible(WebDriver driver, String xpathLocator) {
+    protected void waitForElementInvisible(WebDriver driver, String locator) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
 
-        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpathLocator)));
+        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
     }
 
-    protected void waitForAllElementInvisible(WebDriver driver, String xpathLocator) {
+    protected void waitForAllElementInvisible(WebDriver driver, String locator) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
 
-        explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getElements(driver, xpathLocator)));
+        explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getElements(driver, locator)));
     }
 
     public ComputersPageObject openComputersPage(WebDriver driver) {
