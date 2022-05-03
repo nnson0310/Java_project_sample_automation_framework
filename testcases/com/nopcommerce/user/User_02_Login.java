@@ -11,9 +11,6 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.PageInitManager;
 import pageObjects.RegisterPageObject;
-
-import java.util.Random;
-
 import static pageObjects.PageInitManager.getLoginPageObject;
 
 public class User_02_Login extends BaseTest {
