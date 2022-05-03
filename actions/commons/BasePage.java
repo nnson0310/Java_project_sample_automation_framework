@@ -1,5 +1,6 @@
 package commons;
 
+import PageUIs.BasePageUI;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjects.*;
 
 import java.util.List;
 import java.util.Set;
@@ -344,4 +346,48 @@ public class BasePage {
 
         explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getElements(driver, xpathLocator)));
     }
+
+    public ComputersPageObject openComputersPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuComputer);
+        clickToElement(driver, BasePageUI.headerMenuComputer);
+        return PageInitManager.getComputerPageObject(driver);
+    }
+
+    public BooksPageObject openBooksPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuBooks);
+        clickToElement(driver, BasePageUI.headerMenuBooks);
+        return PageInitManager.getBooksPageObject(driver);
+    }
+
+    public ApparelPageObject openApparelPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuApparel);
+        clickToElement(driver, BasePageUI.headerMenuApparel);
+        return PageInitManager.getApparelPageObject(driver);
+    }
+
+    public ElectronicsPageObject openElectronicsPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuElectronics);
+        clickToElement(driver, BasePageUI.headerMenuElectronics);
+        return PageInitManager.getElectronicsPageObject(driver);
+    }
+
+    public GiftCardsPageObject openGiftCardsPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuGiftCards);
+        clickToElement(driver, BasePageUI.headerMenuGiftCards);
+        return PageInitManager.getGiftCardsPageObject(driver);
+    }
+
+    public JewelryPageObject openJewelryPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuJewelry);
+        clickToElement(driver, BasePageUI.headerMenuJewelry);
+        return PageInitManager.getJewelryPageObject(driver);
+    }
+
+    public DigitalDownloadsPageObject openDigitalDownloadsPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.headerMenuDigitalDownloads);
+        clickToElement(driver, BasePageUI.headerMenuDigitalDownloads);
+        return PageInitManager.getDigitalDownloadsPageObject(driver);
+    }
+
+
 }
