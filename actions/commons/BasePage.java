@@ -130,8 +130,6 @@ public class BasePage {
     private By getByLocator(String locatorType) {
         By by = null;
 
-        System.out.println("Locator is " + locatorType);
-
         if (locatorType.startsWith("id=") || locatorType.startsWith("ID=") || locatorType.startsWith("Id=")) {
             by = By.id(getLocatorValue(locatorType));
         }
@@ -373,45 +371,58 @@ public class BasePage {
         explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getElements(driver, locator)));
     }
 
+    private String createDynamicLocator(String locator, String... dynamicLocator) {
+        return String.format(locator, (Object[]) dynamicLocator);
+    }
+
+    private String locator;
+
     public ComputersPageObject openComputersPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuComputer);
-        clickToElement(driver, BasePageUI.headerMenuComputer);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Computers");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getComputerPageObject(driver);
     }
 
     public BooksPageObject openBooksPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuBooks);
-        clickToElement(driver, BasePageUI.headerMenuBooks);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Books");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getBooksPageObject(driver);
     }
 
     public ApparelPageObject openApparelPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuApparel);
-        clickToElement(driver, BasePageUI.headerMenuApparel);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Apparel");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getApparelPageObject(driver);
     }
 
     public ElectronicsPageObject openElectronicsPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuElectronics);
-        clickToElement(driver, BasePageUI.headerMenuElectronics);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Electronics");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getElectronicsPageObject(driver);
     }
 
     public GiftCardsPageObject openGiftCardsPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuGiftCards);
-        clickToElement(driver, BasePageUI.headerMenuGiftCards);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Gift Cards");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getGiftCardsPageObject(driver);
     }
 
     public JewelryPageObject openJewelryPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuJewelry);
-        clickToElement(driver, BasePageUI.headerMenuJewelry);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Jewelry");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getJewelryPageObject(driver);
     }
 
     public DigitalDownloadsPageObject openDigitalDownloadsPage(WebDriver driver) {
-        waitForElementClickable(driver, BasePageUI.headerMenuDigitalDownloads);
-        clickToElement(driver, BasePageUI.headerMenuDigitalDownloads);
+        locator = createDynamicLocator(BasePageUI.headerMenuDynamicLinks, "Digital downloads");
+        waitForElementClickable(driver, locator);
+        clickToElement(driver, locator);
         return PageInitManager.getDigitalDownloadsPageObject(driver);
     }
 

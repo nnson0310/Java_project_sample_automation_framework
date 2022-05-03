@@ -23,6 +23,8 @@ public class User_03_Switch_Between_Page extends BaseTest {
 
     GiftCardsPageObject giftCardsPage;
 
+    ElectronicsPageObject electronicsPage;
+
     @Parameters({"browser"})
     @BeforeClass
     public void setUp(String browserName) {
@@ -41,6 +43,8 @@ public class User_03_Switch_Between_Page extends BaseTest {
         booksPage = apparelPage.openBooksPage(driver);
 
         giftCardsPage = booksPage.openGiftCardsPage(driver);
+
+        electronicsPage = giftCardsPage.openElectronicsPage(driver);
     }
 
     @AfterClass
