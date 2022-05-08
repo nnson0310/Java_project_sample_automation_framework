@@ -43,4 +43,21 @@ public class PageInitManager {
     public static GiftCardsPageObject getGiftCardsPageObject(WebDriver driver) {
         return new GiftCardsPageObject(driver);
     }
+
+    public static CustomerInfoPageObject getCustomerInfoPageObject(WebDriver driver) {
+        return new CustomerInfoPageObject(driver);
+    }
+
+    public static AddressesPageObject getAddressesPageObject(WebDriver driver) {
+        return new AddressesPageObject(driver);
+    }
+
+    public static ChangePasswordPageObject getChangePasswordPageObject(WebDriver driver) {
+        return new ChangePasswordPageObject(driver);
+    }
+
+    public static OrdersPageObject getOrdersPageObject(WebDriver driver) {
+        return new OrdersPageObject(driver);
+    }
+
 }

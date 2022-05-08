@@ -33,19 +33,19 @@ public class User_03_Switch_Between_Page extends BaseTest {
         homePage = PageInitManager.getHomePageObject(driver);
     }
 
-    @Test
-    public void TC_01_Switch_Page()
-    {
-        computersPage = homePage.openComputersPage(driver);
-
-        apparelPage = computersPage.openApparelPage(driver);
-
-        booksPage = apparelPage.openBooksPage(driver);
-
-        giftCardsPage = booksPage.openGiftCardsPage(driver);
-
-        electronicsPage = giftCardsPage.openElectronicsPage(driver);
-    }
+//    @Test
+//    public void TC_01_Switch_Page()
+//    {
+//        computersPage = homePage.openComputersPage(driver);
+//
+//        apparelPage = computersPage.openApparelPage(driver);
+//
+//        booksPage = apparelPage.openBooksPage(driver);
+//
+//        giftCardsPage = booksPage.openGiftCardsPage(driver);
+//
+//        electronicsPage = giftCardsPage.openElectronicsPage(driver);
+//    }
 
     @AfterClass
     public void tearDown() {
