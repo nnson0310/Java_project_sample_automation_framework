@@ -2,6 +2,6 @@ package PageUIs;
 
 public class BasePageUI {
 
-    public static final String headerMenuDynamicLinks = "Xpath=//div[@class='header-menu']//ul[contains(@class, 'notmobile')]//a[contains(text(), '%s')]";
+    public static final String USER_DYNAMIC_NAVIGATION_LINK = "xpath=//div[contains(@class, '%s')]//a[text()='%s']";
 
 }
