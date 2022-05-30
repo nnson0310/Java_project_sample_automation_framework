@@ -25,10 +25,10 @@ public class User_03_Switch_Between_Page extends BaseTest {
 
     ElectronicsPageObject electronicsPage;
 
-    @Parameters({"browser"})
+    @Parameters({"browser", "url"})
     @BeforeClass
-    public void setUp(String browserName) {
-        driver = getBrowserDriver(browserName);
+    public void setUp(String browserName, String pageUrl) {
+        driver = getBrowserDriver(browserName, pageUrl);
 
         homePage = PageInitManager.getHomePageObject(driver);
     }
