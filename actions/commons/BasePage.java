@@ -27,7 +27,7 @@ public class BasePage {
 
     private Actions action;
 
-    private void sleepInSecond(int seconds) {
+    protected void sleepInSecond(int seconds) {
         try {
             Thread.sleep(seconds *  GlobalConstants.threadSleepMillis);
         } catch (InterruptedException e) {
@@ -155,6 +155,7 @@ public class BasePage {
         if (locator.startsWith("Xpath") || locator.startsWith("xpath=") || locator.startsWith("XPATH=")) {
             locator = String.format(locator, (Object[]) dynamicValues);
         }
+        System.out.println(locator);
         return locator;
     }
 

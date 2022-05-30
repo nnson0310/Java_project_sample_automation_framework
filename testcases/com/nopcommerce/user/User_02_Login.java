@@ -27,11 +27,11 @@ public class User_02_Login extends BaseTest {
 
     private String firstName, lastName, email, password;
 
-    @Parameters({"browser"})
+    @Parameters({"browser", "url"})
     @BeforeClass
-    public void setUp(String browserName) {
+    public void setUp(String browserName, String pageUrl) {
 
-        driver = getBrowserDriver(browserName);
+        driver = getBrowserDriver(browserName, pageUrl);
 
         pageInitManager = new PageInitManager();
 

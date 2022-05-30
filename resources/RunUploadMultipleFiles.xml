@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="JqueryUploadFile">
+    <parameter name="url" value="https://blueimp.github.io/jQuery-File-Upload/"></parameter>
+    <test name="upload_multiple_files" description="Upload multiple files">
+        <parameter name="browser" value="firefox">
+            <classes>
+                <class name="jquery.uploadfile.Upload_Multiple_Files"></class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

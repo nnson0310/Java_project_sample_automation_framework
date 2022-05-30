@@ -23,10 +23,10 @@ public class User_04_Apply_Dynamic_Xpath extends BaseTest {
 
     String firstName, lastName, email, password;
 
-    @Parameters({"browser"})
+    @Parameters({"browser", "url"})
     @BeforeClass
-    public void setUp(String browserName) {
-        driver = getBrowserDriver(browserName);
+    public void setUp(String browserName, String pageUrl) {
+        driver = getBrowserDriver(browserName, pageUrl);
 
         pageInitManager = new PageInitManager();
 
