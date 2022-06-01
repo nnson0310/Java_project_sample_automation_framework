@@ -1,6 +1,6 @@
 package commons;
 
-import PageUIs.BasePageUI;
+import NopCommercePageUIs.BasePageUI;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.*;
 
 import java.util.List;
 import java.util.Set;
@@ -159,11 +158,11 @@ public class BasePage {
         return locator;
     }
 
-    private WebElement getElement(WebDriver driver, String locator) {
+    protected WebElement getElement(WebDriver driver, String locator) {
         return driver.findElement(getByLocator(locator));
     }
 
-    private List<WebElement> getElements(WebDriver driver, String locator) {
+    protected List<WebElement> getElements(WebDriver driver, String locator) {
         return driver.findElements(getByLocator(locator));
     }
 
@@ -181,6 +180,12 @@ public class BasePage {
 
     protected void sendKeyToElement(WebDriver driver, String locator, String value, String... dynamicValues) {
         getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(value);
+    }
+
+    protected void pressEnterButton(WebDriver driver) {
+        action = new Actions(driver);
+
+        action.sendKeys(Keys.ENTER);
     }
 
     protected void selectItemInDropDown(WebDriver driver, String locator, String text) {
@@ -229,10 +234,11 @@ public class BasePage {
         return getElement(driver, locator).getAttribute(attributeName);
     }
 
-    protected String getTextElement(WebDriver driver, String locator) {
+    protected String getElementText(WebDriver driver, String locator) {
         return getElement(driver, locator).getText();
     }
-    protected String getTextElement(WebDriver driver, String locator, String... dynamicValues) {
+
+    protected String getElementText(WebDriver driver, String locator, String... dynamicValues) {
         return getElement(driver, getDynamicXpath(locator, dynamicValues)).getText();
     }
 
@@ -248,6 +254,7 @@ public class BasePage {
     protected int getElementSize(WebDriver driver, String locator) {
         return getElements(driver, locator).size();
     }
+
     protected int getElementSize(WebDriver driver, String locator, String... dynamicValues) {
         return getElements(driver, getDynamicXpath(locator, dynamicValues)).size();
     }
@@ -403,6 +410,12 @@ public class BasePage {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
 
         explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locator, dynamicValues))));
+    }
+
+    protected void waitForElementClickable(WebDriver driver, String locator) {
+        explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
+
+        explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
     }
 
     protected void waitForElementClickable(WebDriver driver, String locator, String... dynamicValues) {

@@ -7,8 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nop.commerce.HomePageObject;
+import pageObjects.nop.commerce.RegisterPageObject;
 import commons.BaseTest;
 
 import java.util.Random;

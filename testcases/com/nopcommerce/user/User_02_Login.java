@@ -7,11 +7,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.PageInitManager;
-import pageObjects.RegisterPageObject;
-import static pageObjects.PageInitManager.getLoginPageObject;
+import pageObjects.nop.commerce.HomePageObject;
+import pageObjects.nop.commerce.LoginPageObject;
+import pageObjects.nop.commerce.PageInitManager;
+import pageObjects.nop.commerce.RegisterPageObject;
+import static pageObjects.nop.commerce.PageInitManager.getLoginPageObject;
 
 public class User_02_Login extends BaseTest {
 
@@ -29,9 +29,9 @@ public class User_02_Login extends BaseTest {
 
     @Parameters({"browser", "url"})
     @BeforeClass
-    public void setUp(String browserName, String pageUrl) {
+    public void setUp(String browserName, String browserUrl) {
 
-        driver = getBrowserDriver(browserName, pageUrl);
+        driver = getBrowserDriver(browserName, browserUrl);
 
         pageInitManager = new PageInitManager();
 
@@ -41,12 +41,12 @@ public class User_02_Login extends BaseTest {
         password = "123456";
 
         //khoi tao doi tuong homePageObject
-        homePage = pageInitManager.getHomePageObject(driver);
+//        homePage = pageInitManager.getHomePageObject(driver);
         homePage.clickRegisterLink();
 
         //pre-conditon - set up registered account for login with registered email test case
         //moi lan chuyen page deu phai khoi tao pageObject moi
-        registerPage = pageInitManager.getRegisterPageObject(driver);
+//        registerPage = pageInitManager.getRegisterPageObject(driver);
 
         registerPage.inputFirstName(firstName);
         registerPage.inputLastName(lastName);
@@ -65,7 +65,7 @@ public class User_02_Login extends BaseTest {
     public void Login_01_Empty_Data() {
         homePage.clickLoginLink();
 
-        loginPage = getLoginPageObject(driver);
+//        loginPage = getLoginPageObject(driver);
 
         loginPage.clickLoginButton();
 
@@ -76,7 +76,7 @@ public class User_02_Login extends BaseTest {
     public void Login_02_Invalid_Email() {
         homePage.clickLoginLink();
 
-        loginPage = getLoginPageObject(driver);
+//        loginPage = getLoginPageObject(driver);
 
         loginPage.inputEmailTextBox("son@");
         loginPage.inputPasswordTextBox(password);

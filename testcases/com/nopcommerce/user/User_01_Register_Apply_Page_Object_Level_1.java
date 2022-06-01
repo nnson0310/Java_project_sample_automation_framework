@@ -54,11 +54,11 @@ public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
         waitForElementClickable(driver, "//button[@id='register-button']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getTextElement(driver, "//span[@id='FirstName-error']"), "First name is required.");
-        Assert.assertEquals(getTextElement(driver, "//span[@id='LastName-error']"), "Last name is required.");
-        Assert.assertEquals(getTextElement(driver, "//span[@id='Email-error']"), "Email is required.");
-        Assert.assertEquals(getTextElement(driver, "//span[@id='Password-error']"), "Password is required.");
-        Assert.assertEquals(getTextElement(driver, "//span[@id='ConfirmPassword-error']"), "Password is required.");
+        Assert.assertEquals(getElementText(driver, "//span[@id='FirstName-error']"), "First name is required.");
+        Assert.assertEquals(getElementText(driver, "//span[@id='LastName-error']"), "Last name is required.");
+        Assert.assertEquals(getElementText(driver, "//span[@id='Email-error']"), "Email is required.");
+        Assert.assertEquals(getElementText(driver, "//span[@id='Password-error']"), "Password is required.");
+        Assert.assertEquals(getElementText(driver, "//span[@id='ConfirmPassword-error']"), "Password is required.");
     }
 
     @Test
@@ -75,7 +75,7 @@ public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
         waitForElementClickable(driver, "//button[@id='register-button']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getTextElement(driver, "//div[contains(@class, 'validation-summary-errors')]"), "Wrong email");
+        Assert.assertEquals(getElementText(driver, "//div[contains(@class, 'validation-summary-errors')]"), "Wrong email");
     }
 
     @Test
@@ -92,7 +92,7 @@ public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
         waitForElementClickable(driver, "//button[@id='register-button']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getTextElement(driver, "//div[@class = 'result']"), "Your registration completed");
+        Assert.assertEquals(getElementText(driver, "//div[@class = 'result']"), "Your registration completed");
     }
 
     @Test
@@ -112,7 +112,7 @@ public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
         waitForElementClickable(driver, "//button[@id='register-button']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getTextElement(driver, "//div[contains(@class, 'validation-summary-errors')]"), "The specified email already exists");
+        Assert.assertEquals(getElementText(driver, "//div[contains(@class, 'validation-summary-errors')]"), "The specified email already exists");
     }
 
     @Test
@@ -129,7 +129,7 @@ public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
         waitForElementClickable(driver, "//button[@id='register-button']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getTextElement(driver, "//span[@id='Password-error']"),
+        Assert.assertEquals(getElementText(driver, "//span[@id='Password-error']"),
                 "Password must meet the following rules:\nmust have at least 6 characters");
     }
 
@@ -147,7 +147,7 @@ public class User_01_Register_Apply_Page_Object_Level_1 extends BasePage {
         waitForElementClickable(driver, "//button[@id='register-button']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getTextElement(driver, "//span[@id='ConfirmPassword-error']"),
+        Assert.assertEquals(getElementText(driver, "//span[@id='ConfirmPassword-error']"),
                 "The password and confirmation password do not match.");
     }
 
