@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="LiveTechPanda_TestSuite">
+    <parameter name="url" value="http://live.techpanda.org/index.php/backendlogin/customer/"></parameter>
+    <test name="LiveTechPanda" description="LiveTechPanda">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="live.techpanda.ManageCustomers"></class>
+        </classes>
+    </test>
+</suite>

@@ -5,8 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-import pageObjects.*;
+import pageObjects.nop.commerce.*;
 
 public class User_03_Switch_Between_Page extends BaseTest {
 
@@ -28,9 +27,9 @@ public class User_03_Switch_Between_Page extends BaseTest {
     @Parameters({"browser"})
     @BeforeClass
     public void setUp(String browserName) {
-        driver = getBrowserDriver(browserName);
+//        driver = getBrowserDriver(browserName);
 
-        homePage = PageInitManager.getHomePageObject(driver);
+//        homePage = PageInitManager.getHomePageObject(driver);
     }
 
 //    @Test

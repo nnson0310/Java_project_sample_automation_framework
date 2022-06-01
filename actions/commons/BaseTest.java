@@ -28,7 +28,7 @@ public class BaseTest {
         return random.nextInt(9999);
     }
 
-    public WebDriver getBrowserDriver(String browserName) {
+    public WebDriver getBrowserDriver(String browserName, String browserUrl) {
         if (browserName.equals("firefox")) {
             // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
             WebDriverManager.firefoxdriver().setup();
@@ -63,8 +63,8 @@ public class BaseTest {
             throw new RuntimeException("Browser name is invalid");
         }
 
-        driver.get("https://demo.nopcommerce.com/");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.get(browserUrl);
+        driver.manage().timeouts().implicitlyWait(GlobalConstants.shortTimeOut, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
         return driver;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="jqueryscript_testcase">
+    <test name="Firefox" description="Run on Firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="net.jqueryscript.Table"/>
+        </classes>
+    </test>
+</suite>
