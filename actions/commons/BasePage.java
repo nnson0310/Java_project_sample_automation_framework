@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
@@ -26,7 +27,11 @@ public class BasePage {
 
     private Actions action;
 
-    protected void sleepInSecond(int seconds) {
+    private void overrideGlobalTimeout(WebDriver driver, long seconds) {
+        driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+    }
+
+    protected void sleepInSecond(long seconds) {
         try {
             Thread.sleep(seconds *  GlobalConstants.threadSleepMillis);
         } catch (InterruptedException e) {
@@ -85,6 +90,7 @@ public class BasePage {
     }
 
     protected void sendKeyToAlert(WebDriver driver, String str) {
+
         waitForAlertPresent(driver).sendKeys(str);
     }
 
@@ -175,10 +181,12 @@ public class BasePage {
     }
 
     protected void sendKeyToElement(WebDriver driver, String locator, String value) {
+        getElement(driver, locator).clear();
         getElement(driver, locator).sendKeys(value);
     }
 
     protected void sendKeyToElement(WebDriver driver, String locator, String value, String... dynamicValues) {
+        getElement(driver, getDynamicXpath(locator, dynamicValues)).clear();
         getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(value);
     }
 
@@ -287,6 +295,23 @@ public class BasePage {
 
     protected boolean isElementDisplayed(WebDriver driver, String locator, String... dynamicValues) {
         return getElement(driver, getDynamicXpath(locator, dynamicValues)).isDisplayed();
+    }
+
+    protected boolean isElementUndisplayed(WebDriver driver, String locator) {
+        overrideGlobalTimeout(driver, GlobalConstants.shortTimeOut);
+        List<WebElement> elements = getElements(driver, locator);
+        overrideGlobalTimeout(driver, GlobalConstants.longTimeOut);
+        int numberOfElements = elements.size();
+
+        if (numberOfElements == 0) {
+            return true;
+        }
+        else if (numberOfElements > 0 && !elements.get(0).isDisplayed()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     protected boolean isElementEnabled(WebDriver driver, String locator) {
@@ -426,14 +451,16 @@ public class BasePage {
 
     protected void waitForElementInvisible(WebDriver driver, String locator) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
-
+        overrideGlobalTimeout(driver, GlobalConstants.shortTimeOut);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
+        overrideGlobalTimeout(driver, GlobalConstants.longTimeOut);
     }
 
     protected void waitForElementInvisible(WebDriver driver, String locator, String... dynamicValues) {
         explicitWait = new WebDriverWait(driver, explicitWaitTimeout);
-
+        overrideGlobalTimeout(driver, GlobalConstants.shortTimeOut);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(getDynamicXpath(locator, dynamicValues))));
+        overrideGlobalTimeout(driver, GlobalConstants.longTimeOut);
     }
 
     protected void waitForAllElementInvisible(WebDriver driver, String locator) {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Facebook">
+    <listeners>
+        <listener class-name="commons.MethodListener"></listener>
+    </listeners>
+    <test name="Facebook" description="Test case for facebook">
+        <parameter name="url" value="https://www.facebook.com/"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.facebook.TC_Register_01"/>
+        </classes>
+    </test>
+</suite>

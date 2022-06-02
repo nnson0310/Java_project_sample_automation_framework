@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Traveloka">
+<!--    <listeners>-->
+<!--        <listener class-name="commons.MethodListener"></listener>-->
+<!--    </listeners>-->
+    <parameter name="url" value="https://www.traveloka.com/vi-vn/user/signup"></parameter>
+    <test name="Firefox" description="Run on Firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.traveloka.User_01_Register"></class>
+        </classes>
+    </test>
+</suite>
