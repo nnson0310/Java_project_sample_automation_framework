@@ -57,5 +57,6 @@
     <orderEntry type="library" name="webdrivermanager-4.2.0" level="project" />
     <orderEntry type="library" name="gson-2.8.5" level="project" />
     <orderEntry type="library" name="log4j-1.2.16" level="project" />
+    <orderEntry type="library" name="commons-collections-3.2.1" level="project" />
   </component>
 </module>

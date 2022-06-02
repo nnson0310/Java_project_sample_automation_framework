@@ -160,7 +160,6 @@ public class BasePage {
         if (locator.startsWith("Xpath") || locator.startsWith("xpath=") || locator.startsWith("XPATH=")) {
             locator = String.format(locator, (Object[]) dynamicValues);
         }
-        System.out.println(locator);
         return locator;
     }
 
