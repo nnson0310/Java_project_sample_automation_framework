@@ -1,6 +1,8 @@
 package commons;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,7 +24,13 @@ public class BaseTest {
     * */
     private WebDriver driver;
 
+    protected final Log log;
+
     private String projectPath = System.getProperty("user.dir");
+
+    public BaseTest() {
+        log = LogFactory.getLog(getClass());
+    }
 
     public int generateRandomNumber() {
         Random random = new Random();
