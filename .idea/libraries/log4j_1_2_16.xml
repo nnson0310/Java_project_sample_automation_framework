@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="log4j-1.2.16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
