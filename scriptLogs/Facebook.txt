@@ -1,2 +1,0 @@
-[2022-06-02 17:16:18,433] Verify Displayed Elements - Step 01: Click register button
-[2022-06-02 17:16:18,551] Verify Displayed Elements - Step 02: Vefiry if register email field is displayed

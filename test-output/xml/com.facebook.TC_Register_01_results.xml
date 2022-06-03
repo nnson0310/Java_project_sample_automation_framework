@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="0.687">
+           time="0.660">
   <properties />
-            <testcase name="TC_01_Verify_Displayed_Elements" time="0.687" classname="com.facebook.TC_Register_01">
+            <testcase name="TC_01_Verify_Displayed_Elements" time="0.660" classname="com.facebook.TC_Register_01">
                 <failure type="java.lang.AssertionError"
                   message="expected [false] but found [true]"
               >
@@ -15,7 +15,6 @@
   org.testng.Assert.failNotEquals(Assert.java:776)
   org.testng.Assert.assertFalse(Assert.java:65)
   org.testng.Assert.assertFalse(Assert.java:75)
-  commons.BaseTest.verifyFalse(BaseTest.java:105)
   com.facebook.TC_Register_01.TC_01_Verify_Displayed_Elements(TC_Register_01.java:36)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
