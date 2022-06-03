@@ -1,10 +1,7 @@
 package reportConfig;
 
-import com.relevantcodes.extentreports.LogStatus;
+import static reportConfig.ExtentTestManager.getTest;
 
-import commons.BaseTest;
-import reportConfig.ExtentManager;
-import reportConfig.ExtentTestManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -12,51 +9,46 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.Status;
+
+import commons.BaseTest;
+
 public class ExtentTestListener extends BaseTest implements ITestListener {
-
-    @Override
-    public void onStart(ITestContext context) {
-        System.out.println("---------- " + context.getName() + " STARTED test ----------");
-        context.setAttribute("WebDriver", this.getDriver());
+    private static String getTestMethodName(ITestResult iTestResult) {
+        return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
 
     @Override
-    public void onFinish(ITestContext context) {
-        System.out.println("---------- " + context.getName() + " FINISHED test ----------");
-        ExtentTestManager.endTest();
-        ExtentManager.getReporter().flush();
+    public void onStart(ITestContext iTestContext) {
+        iTestContext.setAttribute("WebDriver", this.getDriver());
     }
 
     @Override
-    public void onTestStart(ITestResult result) {
-        System.out.println("---------- " + result.getName() + " STARTED test ----------");
+    public void onFinish(ITestContext iTestContext) {
+        ExtentManager.extentReports.flush();
     }
 
     @Override
-    public void onTestSuccess(ITestResult result) {
-        System.out.println("---------- " + result.getName() + " SUCCESS test ----------");
-        ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
+    public void onTestStart(ITestResult iTestResult) {
     }
 
     @Override
-    public void onTestFailure(ITestResult result) {
-        System.out.println("---------- " + result.getName() + " FAILED test ----------");
-
-        Object testClass = result.getInstance();
-        WebDriver webDriver = ((BaseTest) testClass).getDriver();
-        String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BASE64);
-        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed", ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+    public void onTestSuccess(ITestResult iTestResult) {
     }
 
     @Override
-    public void onTestSkipped(ITestResult result) {
-        System.out.println("---------- " + result.getName() + " SKIPPED test ----------");
-        ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+    public void onTestFailure(ITestResult iTestResult) {
+        Object testClass = iTestResult.getInstance();
+        WebDriver driver = ((BaseTest) testClass).getDriver();
+        String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+        getTest().log(Status.FAIL, "Test Failed", getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
     }
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        System.out.println("---------- " + result.getName() + " FAILED WITH SUCCESS PERCENTAGE test ----------");
+    public void onTestSkipped(ITestResult iTestResult) {
     }
 
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+    }
 }

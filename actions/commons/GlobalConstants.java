@@ -19,4 +19,6 @@ public class GlobalConstants {
 
     public static final String extentReportCapturedScreenshot = projectPath + File.separator + "reportScreenshot" + File.separator + "extentReport" + File.separator;
 
+    public static final String JAVA_VERSION = System.getProperty("java.version");
+
 }

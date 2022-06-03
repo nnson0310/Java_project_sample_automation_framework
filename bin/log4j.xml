@@ -35,7 +35,7 @@
         </layout>
     </appender>
 
-    <category name="com.facebook.TC_Register_01_Extent_Report">
+    <category name="com.facebook.TC_Register_01_Extent_Report_V3">
         <priority value="all" />
         <appender-ref ref="console" />
         <appender-ref ref="logfile" />

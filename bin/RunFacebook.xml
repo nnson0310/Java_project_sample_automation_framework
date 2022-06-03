@@ -5,13 +5,16 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
         <listener class-name="reportConfig.ExtentTestListener" />
+<!--        <listener class-name="reportConfig.ExtentReportV4.ExtentTestListener" />-->
+<!--        <listener class-name="reportConfig.ExtentReportV3.ExtentTestListener" />-->
+<!--        <listener class-name="reportConfig.ExtentReportV2.ExtentTestListener" />-->
 <!--        <listener class-name="reportConfig.ReportNGListener" />-->
     </listeners>
     <test name="Facebook" description="Test case for facebook">
         <parameter name="url" value="https://www.facebook.com/"></parameter>
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.facebook.TC_Register_01_Extent_Report"/>
+            <class name="com.facebook.TC_Register_01_Extent_Report_V5"/>
         </classes>
     </test>
 </suite>
