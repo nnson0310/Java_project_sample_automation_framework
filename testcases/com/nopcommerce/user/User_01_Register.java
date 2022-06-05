@@ -60,7 +60,7 @@ public class User_01_Register extends BaseTest {
 
         homePageObject.clickRegisterLink();
 
-        registerPageObject.clickRegisterButton();
+        registerPageObject.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPageObject.getFirstNameInputErrorMsg(), "First name is required.");
         Assert.assertEquals(registerPageObject.getLastNameInputErrorMsg(), "Last name is required.");
@@ -79,7 +79,7 @@ public class User_01_Register extends BaseTest {
         registerPageObject.inputPassword(password);
         registerPageObject.inputConfirmPassword(password);
 
-        registerPageObject.clickRegisterButton();
+        registerPageObject.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPageObject.getSummaryValidationErrorMsg(), "Wrong email");
     }
@@ -95,7 +95,7 @@ public class User_01_Register extends BaseTest {
         registerPageObject.inputPassword(password);
         registerPageObject.inputConfirmPassword(password);
 
-        registerPageObject.clickRegisterButton();
+        registerPageObject.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPageObject.getRegisterSuccessMessage(), "Your registration completed");
     }
@@ -113,7 +113,7 @@ public class User_01_Register extends BaseTest {
         registerPageObject.inputPassword(password);
         registerPageObject.inputConfirmPassword(password);
 
-        registerPageObject.clickRegisterButton();
+        registerPageObject.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPageObject.getSummaryValidationErrorMsg(), "The specified email already exists");
     }
@@ -129,7 +129,7 @@ public class User_01_Register extends BaseTest {
         registerPageObject.inputPassword("12345");
         registerPageObject.inputConfirmPassword("12345");
 
-        registerPageObject.clickRegisterButton();
+        registerPageObject.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPageObject.getPasswordInputErrorMsg(),
                 "Password must meet the following rules:\nmust have at least 6 characters");
@@ -146,7 +146,7 @@ public class User_01_Register extends BaseTest {
         registerPageObject.inputPassword(password);
         registerPageObject.inputConfirmPassword(firstName);
 
-        registerPageObject.clickRegisterButton();
+        registerPageObject.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPageObject.getConfirmPasswordInputErrorMsg(),
                 "The password and confirmation password do not match.");

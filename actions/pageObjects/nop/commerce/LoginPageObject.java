@@ -36,4 +36,8 @@ public class LoginPageObject extends BasePage {
         waitForElementVisible(driver, LoginPageUI.SUMMARY_VALIDATION_ERROR_MSG);
         return getElementText(driver, LoginPageUI.SUMMARY_VALIDATION_ERROR_MSG);
     }
+
+    public void refreshCurrentPage(WebDriver driver) {
+        super.refreshPage(driver);
+    }
 }
