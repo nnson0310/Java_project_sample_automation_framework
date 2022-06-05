@@ -17,7 +17,7 @@ public class HomePageObject extends BasePage {
 
         String fullFileNames = "";
         for(String fileName: fileNames) {
-            fullFileNames = fullFileNames + GlobalConstants.uploadFileLocation + fileName + "\n";
+            fullFileNames = fullFileNames + GlobalConstants.UPLOAD_FILE_LOCATION + fileName + "\n";
         }
         fullFileNames = fullFileNames.trim();
         System.out.println(fullFileNames);

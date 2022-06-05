@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.668">
+           time="0.768">
   <properties />
   
   
-            <testcase name="TC_01_Verify_Displayed_Elements" time="0.668" classname="com.facebook.TC_Register_01_Extent_Report_V5" />
+            <testcase name="TC_01_Verify_Displayed_Elements" time="0.768" classname="com.facebook.TC_Register_01_Extent_Report_V5" />
       
 </testsuite>
