@@ -1,0 +1,1 @@
+{"uuid":"49be48b1-2f15-466d-a4cf-d8942a9d2f29","name":"Facebook","children":["643037d8-5044-409b-8f77-b19b350973e5"],"befores":[{"name":"deleteAllureReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1654420811658,"stop":1654420811746}],"afters":[],"links":[],"start":1654420811640,"stop":1654420818035}

@@ -1,1 +1,0 @@
-{"uuid":"5df6f76f-1296-4fba-a24d-94a7ca86d427","name":"Firefox","children":["8e264dd2-2fc4-445f-8a27-82e56250b079"],"befores":[{"name":"registerNewAccount","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1654402547612,"stop":1654402558024}],"afters":[],"links":[],"start":1654402547599,"stop":1654402566136}
