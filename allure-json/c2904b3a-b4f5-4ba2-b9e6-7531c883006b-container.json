@@ -1,0 +1,1 @@
+{"uuid":"c2904b3a-b4f5-4ba2-b9e6-7531c883006b","name":"NopCommerce","children":["5df6f76f-1296-4fba-a24d-94a7ca86d427"],"befores":[{"name":"deleteAllureReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1654402547577,"stop":1654402547598}],"afters":[],"links":[],"start":1654402547567,"stop":1654402566143}

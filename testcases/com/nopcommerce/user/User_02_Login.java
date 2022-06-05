@@ -54,7 +54,7 @@ public class User_02_Login extends BaseTest {
         registerPage.inputPassword(password);
         registerPage.inputConfirmPassword(password);
 
-        registerPage.clickRegisterButton();
+        registerPage.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 

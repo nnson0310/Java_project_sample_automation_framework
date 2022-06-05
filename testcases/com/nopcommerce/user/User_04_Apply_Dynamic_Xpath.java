@@ -49,7 +49,7 @@ public class User_04_Apply_Dynamic_Xpath extends BaseTest {
         registerPage.inputPassword(password);
         registerPage.inputConfirmPassword(password);
 
-        registerPage.clickRegisterButton();
+        registerPage.clickRegisterButton(driver);
 
         Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 

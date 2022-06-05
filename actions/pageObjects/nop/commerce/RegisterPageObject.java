@@ -12,9 +12,11 @@ public class RegisterPageObject extends BasePage {
         this.driver = driver;
     }
 
-    public void clickRegisterButton() {
+    public HomePageObject clickRegisterButton(WebDriver driver) {
         waitForElementClickable(driver, RegisterPageUI.Register_Button);
         clickToElement(driver, RegisterPageUI.Register_Button);
+
+        return new HomePageObject(driver);
     }
 
     public String getFirstNameInputErrorMsg() {
@@ -75,6 +77,11 @@ public class RegisterPageObject extends BasePage {
     public String getRegisterSuccessMessage() {
         waitForElementVisible(driver, RegisterPageUI.Register_Success_Msg);
         return getElementText(driver, RegisterPageUI.Register_Success_Msg);
+    }
+
+    public boolean isRegisterSuccess() {
+        waitForElementVisible(driver, RegisterPageUI.Register_Success_Msg);
+        return isElementDisplayed(driver, RegisterPageUI.Register_Success_Msg);
     }
 
     public void clickLogoutLink() {
