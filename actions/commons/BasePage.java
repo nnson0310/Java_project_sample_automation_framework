@@ -276,7 +276,7 @@ public class BasePage {
         return getElements(driver, getDynamicXpath(locator, dynamicValues)).size();
     }
 
-    protected void checkCheckboxOrRadio(WebDriver driver, String locator) {
+    protected void uncheckCheckboxOrRadio(WebDriver driver, String locator) {
         List<WebElement> elements = getElements(driver, locator);
 
         for (WebElement element:  elements) {
@@ -287,8 +287,30 @@ public class BasePage {
         }
     }
 
-    protected void uncheckCheckboxOrRadio(WebDriver driver, String locator) {
+    protected void uncheckCheckboxOrRadio(WebDriver driver, String locator, String... dynamicValues) {
+        List<WebElement> elements = getElements(driver, getDynamicXpath(locator, dynamicValues));
+
+        for (WebElement element:  elements) {
+            if (element.isSelected()) {
+                element.click();
+                break;
+            }
+        }
+    }
+
+    protected void checkCheckboxOrRadio(WebDriver driver, String locator) {
         List<WebElement> elements = getElements(driver, locator);
+
+        for (WebElement element:  elements) {
+            if (!element.isSelected()) {
+                element.click();
+                break;
+            }
+        }
+    }
+
+    protected void checkCheckboxOrRadio(WebDriver driver, String locator, String... dynamicValues) {
+        List<WebElement> elements = getElements(driver, getDynamicXpath(locator, dynamicValues));
 
         for (WebElement element:  elements) {
             if (!element.isSelected()) {
@@ -489,4 +511,47 @@ public class BasePage {
         clickToElement(driver, BasePageUI.USER_DYNAMIC_NAVIGATION_LINK, dynamicValues);
     }
 
+    /**
+     * Enter value into dynamic input which is identified by name attribute
+     * @param nameAttribute value of name attribute
+     * @param value value of input field
+     */
+    public void enterToInputByNameAttribute(WebDriver driver, String nameAttribute, String value) {
+        waitForAllElementVisible(driver, BasePageUI.DYNAMIC_INPUT_TEXTBOX, nameAttribute);
+        sendKeyToElement(driver, BasePageUI.DYNAMIC_INPUT_TEXTBOX, value, nameAttribute);
+    }
+
+    /**
+     * Enter value into dynamic input which is identified by name attribute
+     * @param id value of id attribute
+     */
+    public void checkToRadioCheckboxById(WebDriver driver, String id) {
+        waitForElementClickable(driver, BasePageUI.DYNAMIC_RADIO_CHECKBOX, id);
+        checkCheckboxOrRadio(driver, BasePageUI.DYNAMIC_RADIO_CHECKBOX, id);
+    }
+
+    /**
+     * Select value of select dropdown list by name attribute
+     *
+     * @param driver: instance of Webdriver
+     * @param nameAttribute: value of name attribute
+     * @param selectValue: the value which will be selected
+     */
+    public void clickToSelectByNameAttribute(WebDriver driver, String nameAttribute, String selectValue) {
+        waitForElementClickable(driver, BasePageUI.DYNAMIC_SELECT, nameAttribute);
+        selectItemInDropDown(driver, BasePageUI.DYNAMIC_SELECT, selectValue, nameAttribute);
+    }
+
+    /**
+     * Click to button by dynamic id
+     *
+     * @param driver: instance of Webdriver
+     * @param id: value of id attribute
+     */
+    public void clickToButtonById(WebDriver driver, String id) {
+        waitForElementClickable(driver, BasePageUI.DYNAMIC_BUTTON_BY_ID, id);
+        clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_ID, id);
+    }
+
 }
+
