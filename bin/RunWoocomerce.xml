@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Woocomerce">
+    <listeners>
+        <listener class-name="commons.MethodListener"></listener>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="reportConfig.ReportNGListener"/>
+    </listeners>
+    <test name="Woocomerce" description="Test case for woocomerce">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="userUrl" value="https://woocomerce.test"></parameter>
+        <parameter name="adminUrl" value="https://woocomerce.test/wp-admin/"></parameter>
+        <classes>
+            <class name="woocomerce.TC_01_Post_CRUD"></class>
+        </classes>
+<!--        <packages>-->
+<!--            <package name="woocomerce"></package>-->
+<!--        </packages>-->
+    </test>
+</suite>

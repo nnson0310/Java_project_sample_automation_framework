@@ -1,0 +1,12 @@
+[2022-06-07 21:51:30,801] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:51:30,941] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:51:31,032] Pre-condition - Step 03: Click login button
+[2022-06-07 21:51:32,940] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:51:34,037] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:51:35,987] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:51:36,651] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:51:38,803] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:51:39,210] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:51:39,511] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-07 21:51:40,896] OS name = windows 10
+[2022-06-07 21:51:40,896] Driver instance name = firefoxdriver: firefox on windows (8120cef4-cff5-4e33-98f8-f6486ffdb330)
