@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Woocomerce"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="1"
+           time="0.000">
+  <properties />
+            <testcase name="setup" time="0.000" classname="woocomerce.TC_02_Product_CRUD">
+                <failure type="org.testng.TestNGException"
+                  message="
+Parameter &apos;url&apos; is required by BeforeClass on method setup but has not been marked @Optional or defined
+in D:\Automation Test\02 - Selenium Webdriver\workspace\NopCommerce_Automation_Framework\resources\RunWoocomerce.xml"
+              >
+<![CDATA[org.testng.TestNGException: 
+Parameter 'url' is required by BeforeClass on method setup but has not been marked @Optional or defined
+in D:\Automation Test\02 - Selenium Webdriver\workspace\NopCommerce_Automation_Framework\resources\RunWoocomerce.xml
+  org.testng.internal.Parameters.createParams(Parameters.java:290)
+  org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
+  org.testng.internal.Parameters.createParameters(Parameters.java:620)
+  org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+  org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="TC_01" time="0.0" classname="woocomerce.TC_02_Product_CRUD">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

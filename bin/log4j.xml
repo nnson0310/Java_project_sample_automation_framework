@@ -35,7 +35,7 @@
         </layout>
     </appender>
 
-    <category name="com.facebook.TC_Register_01_Extent_Report_V3">
+    <category name="woocomerce">
         <priority value="all" />
         <appender-ref ref="console" />
         <appender-ref ref="logfile" />

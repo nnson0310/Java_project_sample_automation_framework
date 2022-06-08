@@ -12,3 +12,122 @@
 [2022-06-03 09:27:41,811] Verify Displayed Elements - Step 02: Vefiry if register email field is displayed
 [2022-06-03 09:54:51,592] Verify Displayed Elements - Step 01: Click register button
 [2022-06-03 09:54:51,729] Verify Displayed Elements - Step 02: Vefiry if register email field is displayed
+[2022-06-07 17:16:07,799] OS name = windows 10
+[2022-06-07 17:16:07,821] Driver instance name = firefoxdriver: firefox on windows (49e0e330-a8dc-43dc-b2c0-8c105c222e74)
+[2022-06-07 17:16:09,363] OS name = windows 10
+[2022-06-07 17:16:09,364] Driver instance name = firefoxdriver: firefox on windows (null)
+[2022-06-07 17:16:09,365] Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-M4O9I4R', ip: '192.168.194.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+[2022-06-07 17:16:09,464] OS name = windows 10
+[2022-06-07 17:16:09,464] 
+[2022-06-07 17:18:42,925] OS name = windows 10
+[2022-06-07 17:18:42,926] Driver instance name = firefoxdriver: firefox on windows (ccb3dd44-decb-4227-9fde-9ba9af067317)
+[2022-06-07 17:18:44,211] OS name = windows 10
+[2022-06-07 17:18:44,211] Driver instance name = firefoxdriver: firefox on windows (null)
+[2022-06-07 17:18:44,213] Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-M4O9I4R', ip: '192.168.194.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+[2022-06-07 17:33:22,447] Pre-condition - Admin Login: Input username
+[2022-06-07 17:33:22,591] Pre-condition - Admin Login: Input password
+[2022-06-07 17:33:22,681] Pre-condition - Admin Login: Click login button
+[2022-06-07 17:33:28,503] OS name = windows 10
+[2022-06-07 17:33:28,503] Driver instance name = firefoxdriver: firefox on windows (b07b2ec6-5a69-412d-96b9-c5b8daaa05a4)
+[2022-06-07 17:33:30,036] OS name = windows 10
+[2022-06-07 17:33:30,036] Driver instance name = firefoxdriver: firefox on windows (null)
+[2022-06-07 17:33:30,037] Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-M4O9I4R', ip: '192.168.194.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+[2022-06-07 17:34:55,843] Pre-condition - Admin Login: Input username
+[2022-06-07 17:34:55,980] Pre-condition - Admin Login: Input password
+[2022-06-07 17:34:56,073] Pre-condition - Admin Login: Click login button
+[2022-06-07 17:34:57,984] OS name = windows 10
+[2022-06-07 17:34:57,984] Driver instance name = firefoxdriver: firefox on windows (0c0e61c4-58a3-4843-a7ad-5c463fbcdda5)
+[2022-06-07 21:12:34,596] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:12:34,812] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:12:34,898] Pre-condition - Step 03: Click login button
+[2022-06-07 21:12:38,227] OS name = windows 10
+[2022-06-07 21:12:38,227] Driver instance name = firefoxdriver: firefox on windows (338f0019-4eb2-46f9-9236-91fe74e83c4b)
+[2022-06-07 21:13:20,911] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:13:21,039] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:13:21,133] Pre-condition - Step 03: Click login button
+[2022-06-07 21:13:23,749] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:13:25,216] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:13:29,094] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:13:29,848] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:14:10,628] OS name = windows 10
+[2022-06-07 21:14:10,629] Driver instance name = firefoxdriver: firefox on windows (7dc877d5-a7cb-438e-8dad-a50c661a32de)
+[2022-06-07 21:20:37,588] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:20:37,859] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:20:37,946] Pre-condition - Step 03: Click login button
+[2022-06-07 21:20:41,190] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:20:42,744] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:20:47,167] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:20:47,824] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:20:50,054] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:20:50,410] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:20:50,781] OS name = windows 10
+[2022-06-07 21:20:50,781] Driver instance name = firefoxdriver: firefox on windows (d332fce6-2c77-4b3c-9f85-f1d9ec7efe59)
+[2022-06-07 21:41:27,617] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:41:27,740] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:41:27,832] Pre-condition - Step 03: Click login button
+[2022-06-07 21:41:29,857] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:41:31,051] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:41:33,081] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:41:33,726] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:41:35,928] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:41:36,337] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:41:36,654] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-07 21:41:37,178] OS name = windows 10
+[2022-06-07 21:41:37,179] Driver instance name = firefoxdriver: firefox on windows (32b63842-f096-40c5-b169-a33436ebf74b)
+[2022-06-07 21:42:15,247] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:42:15,392] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:42:15,485] Pre-condition - Step 03: Click login button
+[2022-06-07 21:42:17,451] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:42:18,541] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:42:20,501] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:42:21,220] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:42:23,442] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:42:23,828] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:42:24,126] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-07 21:43:04,861] OS name = windows 10
+[2022-06-07 21:43:04,862] Driver instance name = firefoxdriver: firefox on windows (fce6ccac-6a49-4b6b-bc23-5210046d2a3d)
+[2022-06-07 21:48:13,681] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:48:13,804] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:48:13,894] Pre-condition - Step 03: Click login button
+[2022-06-07 21:48:15,847] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:48:17,051] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:48:19,254] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:48:19,981] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:48:22,178] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:48:22,599] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:48:22,922] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-07 21:48:44,359] OS name = windows 10
+[2022-06-07 21:48:44,360] Driver instance name = firefoxdriver: firefox on windows (fd5542ca-27c0-40fd-842c-3efea1c15c09)
+[2022-06-07 21:49:48,963] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:49:49,094] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:49:49,187] Pre-condition - Step 03: Click login button
+[2022-06-07 21:49:51,086] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:49:52,319] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:49:54,306] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:49:55,013] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:49:57,298] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:49:57,697] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:49:58,014] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-07 21:50:19,501] OS name = windows 10
+[2022-06-07 21:50:19,501] Driver instance name = firefoxdriver: firefox on windows (2a723596-c33b-4cf6-b47a-85080f2ef8c6)
+[2022-06-07 21:51:30,801] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-07 21:51:30,941] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-07 21:51:31,032] Pre-condition - Step 03: Click login button
+[2022-06-07 21:51:32,940] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-07 21:51:34,037] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-07 21:51:35,987] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-07 21:51:36,651] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-07 21:51:38,803] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-07 21:51:39,210] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-07 21:51:39,511] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-07 21:51:40,896] OS name = windows 10
+[2022-06-07 21:51:40,896] Driver instance name = firefoxdriver: firefox on windows (8120cef4-cff5-4e33-98f8-f6486ffdb330)

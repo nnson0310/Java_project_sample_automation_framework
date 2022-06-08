@@ -7,8 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
@@ -45,15 +48,21 @@ public class BaseTest {
         if (browserName.equals("firefox")) {
             // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.setAcceptInsecureCerts(true);
+            driver = new FirefoxDriver(firefoxOptions);
         } else if (browserName.equals("chrome")) {
             // System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setAcceptInsecureCerts(true);
+            driver = new ChromeDriver(chromeOptions);
         } else if (browserName.equals("edge")) {
             //System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
             WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+            driver = new EdgeDriver(edgeOptions);
         } else if (browserName.equals("h_firefox")) {
             // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
             WebDriverManager.firefoxdriver().setup();
