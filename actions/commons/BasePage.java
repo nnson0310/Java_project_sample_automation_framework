@@ -1,6 +1,7 @@
 package commons;
 
 import NopCommercePageUIs.BasePageUI;
+import WoocomercePageUIs.admin.DashboardPageUI;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -8,6 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjects.woocomerce.admin.AdminPageGenerator;
+import pageObjects.woocomerce.admin.AdminPostSearchPageObject;
+import pageObjects.woocomerce.user.HomePageObject;
+import pageObjects.woocomerce.user.UserPageGenerator;
 
 import java.util.List;
 import java.util.Set;
@@ -551,6 +556,20 @@ public class BasePage {
     public void clickToButtonById(WebDriver driver, String id) {
         waitForElementClickable(driver, BasePageUI.DYNAMIC_BUTTON_BY_ID, id);
         clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_ID, id);
+    }
+
+    //Wordpress Automation Common Method
+    private AdminPageGenerator adminPageGenerator;
+    private UserPageGenerator userPageGenerator;
+
+    public AdminPostSearchPageObject openAdminPostSearchPageByUrl(WebDriver driver, String url) {
+        openPageUrl(driver, url);
+        return adminPageGenerator.getPostSearchPageObject(driver);
+    }
+
+    public HomePageObject openUserHomePageByUrl(WebDriver driver, String url) {
+        openPageUrl(driver, url);
+        return userPageGenerator.getHomePageObject(driver);
     }
 
 }

@@ -131,3 +131,104 @@ Driver info: driver.version: RemoteWebDriver
 [2022-06-07 21:51:39,511] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
 [2022-06-07 21:51:40,896] OS name = windows 10
 [2022-06-07 21:51:40,896] Driver instance name = firefoxdriver: firefox on windows (8120cef4-cff5-4e33-98f8-f6486ffdb330)
+[2022-06-08 08:55:41,242] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-08 08:55:41,411] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-08 08:55:41,502] Pre-condition - Step 03: Click login button
+[2022-06-08 08:55:45,241] Post_02_Search_Post - Step 01: Open post search page 6/8/2022
+[2022-06-08 08:55:45,349] OS name = windows 10
+[2022-06-08 08:55:45,349] Driver instance name = firefoxdriver: firefox on windows (01a6bd57-35aa-48a7-ac2e-149654f28866)
+[2022-06-08 10:17:36,039] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-08 10:17:36,306] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-08 10:17:36,399] Pre-condition - Step 03: Click login button
+[2022-06-08 10:17:39,568] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-08 10:17:40,725] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-08 10:17:46,213] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-08 10:17:46,911] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-08 10:17:49,186] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-08 10:17:49,617] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-08 10:17:49,923] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-08 10:17:51,392] Post_02_Search_Post - Step 01: Open post search page 
+[2022-06-08 10:17:53,201] Post_02_Search_Post - Step 02: Enter keyword into post_search textbox 
+[2022-06-08 10:17:53,311] Post_02_Search_Post - Step 03: Click search button 
+[2022-06-08 10:17:54,998] Post_02_Search_Post - Step 04: Verify that corresponding post title: Automation 3756 and author: tomanyeuem are displayed in table
+[2022-06-08 10:17:55,095] OS name = windows 10
+[2022-06-08 10:17:55,095] Driver instance name = firefoxdriver: firefox on windows (dde4f5fb-7503-43f2-854e-18594d85b416)
+[2022-06-08 10:50:19,374] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-08 10:50:19,562] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-08 10:50:19,653] Pre-condition - Step 03: Click login button
+[2022-06-08 10:50:22,907] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-08 10:50:23,944] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-08 10:50:29,624] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-08 10:50:30,301] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-08 10:50:32,629] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-08 10:50:32,993] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-08 10:50:33,320] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-08 10:50:34,882] Post_02_Search_Post - Step 01: Open post search page 
+[2022-06-08 10:50:36,870] Post_02_Search_Post - Step 02: Enter keyword into post_search textbox 
+[2022-06-08 10:50:36,998] Post_02_Search_Post - Step 03: Click search button 
+[2022-06-08 10:50:38,656] Post_02_Search_Post - Step 04: Verify that corresponding post title: Automation 9701 and author: tomanyeuem are displayed in table as search result
+[2022-06-08 10:50:38,746] Post_03_View_Post - Step 01: Open user page 
+[2022-06-08 10:50:40,381] OS name = windows 10
+[2022-06-08 10:50:40,381] Driver instance name = firefoxdriver: firefox on windows (0d7b1dc1-35e6-4d14-b7d6-4ff16808f521)
+[2022-06-08 10:51:37,019] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-08 10:51:37,162] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-08 10:51:37,270] Pre-condition - Step 03: Click login button
+[2022-06-08 10:51:39,189] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-08 10:51:40,240] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-08 10:51:42,242] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-08 10:51:42,975] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-08 10:51:45,234] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-08 10:51:45,634] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-08 10:51:45,948] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-08 10:51:47,446] Post_02_Search_Post - Step 01: Open post search page 
+[2022-06-08 10:51:48,347] Post_02_Search_Post - Step 02: Enter keyword into post_search textbox 
+[2022-06-08 10:51:48,460] Post_02_Search_Post - Step 03: Click search button 
+[2022-06-08 10:51:50,139] Post_02_Search_Post - Step 04: Verify that corresponding post title: Automation 2747 and author: tomanyeuem are displayed in table as search result
+[2022-06-08 10:51:50,254] Post_03_View_Post - Step 01: Open user page 
+[2022-06-08 10:51:51,487] Post_03_View_Post - Step 02: Enter post title: Automation 2747 as keyword to search textbox 
+[2022-06-08 10:51:51,591] Post_03_View_Post - Step 03: Click search button 
+[2022-06-08 10:51:52,422] Post_03_View_Post - Step 04: Verify that 'Search Result For: Automation 2747 ' is displayed
+[2022-06-08 10:52:33,112] OS name = windows 10
+[2022-06-08 10:52:33,112] Driver instance name = firefoxdriver: firefox on windows (2f6bd763-5d78-453f-a966-c8be5517c952)
+[2022-06-08 10:54:01,559] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-08 10:54:01,684] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-08 10:54:01,772] Pre-condition - Step 03: Click login button
+[2022-06-08 10:54:03,681] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-08 10:54:04,800] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-08 10:54:06,955] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-08 10:54:07,684] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-08 10:54:10,015] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-08 10:54:10,569] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-08 10:54:10,886] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-08 10:54:12,395] Post_02_Search_Post - Step 01: Open post search page 
+[2022-06-08 10:54:14,522] Post_02_Search_Post - Step 02: Enter keyword into post_search textbox 
+[2022-06-08 10:54:14,664] Post_02_Search_Post - Step 03: Click search button 
+[2022-06-08 10:54:16,356] Post_02_Search_Post - Step 04: Verify that corresponding post title: Automation 1801 and author: tomanyeuem are displayed in table as search result
+[2022-06-08 10:54:16,446] Post_03_View_Post - Step 01: Open user page 
+[2022-06-08 10:54:17,774] Post_03_View_Post - Step 02: Enter post title: Automation 1801 as keyword to search textbox 
+[2022-06-08 10:54:17,884] Post_03_View_Post - Step 03: Click search button 
+[2022-06-08 10:54:18,728] Post_03_View_Post - Step 04: Verify that 'Search Result For: Automation 1801 ' is displayed
+[2022-06-08 10:54:18,789] Post_03_View_Post - Step 04: Verify that post title: Automation 1801 author: tomanyeuem are all displayed
+[2022-06-08 10:54:38,953] OS name = windows 10
+[2022-06-08 10:54:38,954] Driver instance name = firefoxdriver: firefox on windows (010b28f4-f062-4bf5-82fe-4ba222d50359)
+[2022-06-08 10:56:34,635] Pre-condition - Step 01: Input username tomanyeuem
+[2022-06-08 10:56:34,756] Pre-condition - Step 02: Input password tomanyeuem
+[2022-06-08 10:56:34,848] Pre-condition - Step 03: Click login button
+[2022-06-08 10:56:36,721] Post_01_Create_New_Post - Step 01: Open posts management page
+[2022-06-08 10:56:37,899] Post_01_Create_New_Post - Step 02: Open add_new_post page
+[2022-06-08 10:56:39,919] Post_01_Create_New_Post - Step 03: Add post title
+[2022-06-08 10:56:40,555] Post_01_Create_New_Post - Step 04: Add post body
+[2022-06-08 10:56:42,761] Post_01_Create_New_Post - Step 05: Click pre-publish button
+[2022-06-08 10:56:43,194] Post_01_Create_New_Post - Step 06: Click confirm-publish button
+[2022-06-08 10:56:43,500] Post_01_Create_New_Post - Step 07: Verify 'post published' notice is displayed
+[2022-06-08 10:56:44,862] Post_02_Search_Post - Step 01: Open post search page 
+[2022-06-08 10:56:46,688] Post_02_Search_Post - Step 02: Enter keyword into post_search textbox 
+[2022-06-08 10:56:46,804] Post_02_Search_Post - Step 03: Click search button 
+[2022-06-08 10:56:48,487] Post_02_Search_Post - Step 04: Verify that corresponding post title: Automation 389 and author: tomanyeuem are displayed in table as search result
+[2022-06-08 10:56:48,568] Post_03_View_Post - Step 01: Open user page 
+[2022-06-08 10:56:49,957] Post_03_View_Post - Step 02: Enter post title: Automation 389 as keyword to search textbox 
+[2022-06-08 10:56:50,058] Post_03_View_Post - Step 03: Click search button 
+[2022-06-08 10:56:50,877] Post_03_View_Post - Step 04: Verify that 'Search Result For: Automation 389 ' is displayed
+[2022-06-08 10:56:50,937] Post_03_View_Post - Step 04: Verify that post title: Automation 389 author: tomanyeuem are all displayed
+[2022-06-08 10:56:51,003] OS name = windows 10
+[2022-06-08 10:56:51,003] Driver instance name = firefoxdriver: firefox on windows (09e31aec-2154-4713-97e9-4fbe8382f38f)

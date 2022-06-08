@@ -14,10 +14,4 @@ public class DashboardPageObject extends BasePage {
         this.driver = driver;
     }
 
-    public AdminPostSearchPageObject openAdminPostSearchPage(WebDriver driver) {
-        waitForElementClickable(driver, DashboardPageUI.MENU_POSTS);
-        clickToElement(driver, DashboardPageUI.MENU_POSTS);
-
-        return adminPageGenerator.getPostSearchPageObject(driver);
-    }
 }
