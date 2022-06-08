@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Woocomerce"
-           tests="1"
+           tests="3"
            failures="0"
            errors="0"
            skipped="0"
-           time="7.953">
+           time="14.279">
   <properties />
   
   
-            <testcase name="Post_01_Create_New_Post" time="7.953" classname="woocomerce.TC_01_Post_CRUD" />
+            <testcase name="Post_01_Create_New_Post" time="8.140" classname="woocomerce.TC_01_Post_CRUD" />
+                <testcase name="Post_02_Search_Post" time="3.705" classname="woocomerce.TC_01_Post_CRUD" />
+                <testcase name="Post_03_View_Post" time="2.434" classname="woocomerce.TC_01_Post_CRUD" />
       
 </testsuite>

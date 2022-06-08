@@ -13,4 +13,5 @@ public class AdminPostCreatePageUI {
     public static final String PREVIEW_PUBLISH_BUTTON = "css=div.edit-post-header__settings button.editor-post-publish-button__button";
 
     public static final String CONFIRM_PUBLISH_BUTTON = "css=div.editor-post-publish-panel__header-publish-button>button";
+
 }
