@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="NopCommerce">
   <test name="Firefox" description="Run on Firefox">
-    <parameter name="browser" value="firefox"></parameter>
+<!--    <parameter name="browser" value="firefox"></parameter>-->
+    <parameter name="browser" value="chrome"></parameter>
     <parameter name="url" value="https://demo.nopcommerce.com/register"></parameter>
     <classes>
       <!-- Always run before test -->
