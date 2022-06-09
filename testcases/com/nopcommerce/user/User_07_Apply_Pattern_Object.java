@@ -40,27 +40,27 @@ public class User_07_Apply_Pattern_Object extends BaseTest {
     @Test
     public void TC_01_Valid_Data() {
 
-        registerPage.checkToRadioCheckboxById(driver, "gender-female");
-
-        registerPage.clickToSelectByNameAttribute(driver, "DateOfBirthDay", "1");
-        registerPage.clickToSelectByNameAttribute(driver, "DateOfBirthMonth", "January");
-        registerPage.clickToSelectByNameAttribute(driver, "DateOfBirthYear", "1986");
-
-        registerPage.enterToInputByNameAttribute(driver, "FirstName", firstName);
-        registerPage.enterToInputByNameAttribute(driver, "LastName", lastName);
-        registerPage.enterToInputByNameAttribute(driver, "Email", email);
-
-        registerPage.enterToInputByNameAttribute(driver, "Password", password);
-        registerPage.enterToInputByNameAttribute(driver, "ConfirmPassword", password);
-
-        registerPage.clickToButtonById(driver, "register-button");
-
-        Assert.assertTrue(registerPage.isRegisterSuccess());
+//        registerPage.checkToRadioCheckboxById(driver, "gender-female");
+//
+//        registerPage.clickToSelectByNameAttribute(driver, "DateOfBirthDay", "1");
+//        registerPage.clickToSelectByNameAttribute(driver, "DateOfBirthMonth", "January");
+//        registerPage.clickToSelectByNameAttribute(driver, "DateOfBirthYear", "1986");
+//
+//        registerPage.enterToInputByNameAttribute(driver, "FirstName", firstName);
+//        registerPage.enterToInputByNameAttribute(driver, "LastName", lastName);
+//        registerPage.enterToInputByNameAttribute(driver, "Email", email);
+//
+//        registerPage.enterToInputByNameAttribute(driver, "Password", password);
+//        registerPage.enterToInputByNameAttribute(driver, "ConfirmPassword", password);
+//
+//        registerPage.clickToButtonById(driver, "register-button");
+//
+//        Assert.assertTrue(registerPage.isRegisterSuccess());
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        closeBrowserAndKillProcess();
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        closeBrowserAndKillProcess();
+//    }
 
 }

@@ -12,6 +12,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
@@ -20,6 +21,7 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -50,14 +52,31 @@ public class BaseTest {
         if (browserName.equals("firefox")) {
             // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
             WebDriverManager.firefoxdriver().setup();
+
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.setAcceptInsecureCerts(true);
+
+            FirefoxProfile firefoxProfile = new FirefoxProfile();
+            firefoxProfile.setPreference("intl.accept_languages", "vi-VN, vi");
+            firefoxOptions.setProfile(firefoxProfile);
+
             driver = new FirefoxDriver(firefoxOptions);
         } else if (browserName.equals("chrome")) {
             // System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setAcceptInsecureCerts(true);
+
+            //use chromeOptions class to setup before running testcases
+            //such as set language, disable notifications
+            chromeOptions.addArguments("--lang=vi");
+            chromeOptions.addArguments("--disable-infobars");
+            chromeOptions.addArguments("--disable-notifications");
+            chromeOptions.addArguments("--disable-geolocation");
+            chromeOptions.setExperimentalOption("useAutomationExtension", false);
+            chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//            chromeOptions.addArguments("--incognito");
+
             driver = new ChromeDriver(chromeOptions);
         } else if (browserName.equals("edge")) {
             //System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
