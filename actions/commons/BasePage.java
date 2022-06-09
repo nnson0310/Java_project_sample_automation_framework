@@ -204,6 +204,14 @@ public class BasePage {
         getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(value);
     }
 
+    protected void clearInputValueByKeyboard(WebDriver driver, String locator) {
+        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+    }
+
+    protected void clearInputValueByKeyboard(WebDriver driver, String locator, String... dynamicValues) {
+        getElement(driver, getDynamicXpath(locator, dynamicValues)).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+    }
+
     protected void pressEnterButton(WebDriver driver) {
         action = new Actions(driver);
 
