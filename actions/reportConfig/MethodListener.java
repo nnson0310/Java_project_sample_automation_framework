@@ -1,7 +1,8 @@
-package commons;
+package reportConfig;
 
 import java.util.List;
 
+import commons.VerificationFailures;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.testng.IInvokedMethod;
