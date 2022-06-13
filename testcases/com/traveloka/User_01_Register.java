@@ -8,8 +8,9 @@ import org.testng.annotations.*;
 import pageObjects.com.traveloka.PageInitManager;
 import pageObjects.com.traveloka.RegisterPageObject;
 import org.testng.asserts.SoftAssert;
+import reportConfig.MethodListener;
 
-@Listeners(commons.MethodListener.class)
+@Listeners(MethodListener.class)
 public class User_01_Register extends BaseTest {
 
     WebDriver driver;

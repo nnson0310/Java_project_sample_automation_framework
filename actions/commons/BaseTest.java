@@ -48,6 +48,14 @@ public class BaseTest {
         return random.nextInt(9999);
     }
 
+    public static void sleepInSeconds(long seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public WebDriver getBrowserDriver(String browserName, String pageUrl) {
         if (browserName.equals("firefox")) {
             // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
