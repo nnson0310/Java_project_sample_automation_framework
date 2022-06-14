@@ -414,5 +414,7 @@
     <orderEntry type="library" name="jackson-annotations-2.13.2" level="project" />
     <orderEntry type="library" name="jackson-core-2.13.2" level="project" />
     <orderEntry type="library" name="jackson-databind-2.13.2.2" level="project" />
+    <orderEntry type="library" name="javafaker-1.0.2" level="project" />
+    <orderEntry type="library" name="javafaker-1.0.2-sources" level="project" />
   </component>
 </module>

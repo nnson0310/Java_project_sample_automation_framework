@@ -8,6 +8,8 @@ import org.testng.annotations.Parameters;
 import pageObjects.nop.commerce.HomePageObject;
 import pageObjects.nop.commerce.PageInitManager;
 import pageObjects.nop.commerce.RegisterPageObject;
+import utilities.DataFaker;
+
 import java.util.Set;
 
 public class Register_With_Cookie extends BaseTest {
@@ -20,6 +22,8 @@ public class Register_With_Cookie extends BaseTest {
 
     HomePageObject homePage;
 
+    DataFaker dataFaker = DataFaker.getDataFaker();
+
     private String firstName, lastName, email, password;
 
     public static Set<Cookie> cookies;
@@ -28,11 +32,11 @@ public class Register_With_Cookie extends BaseTest {
     @Parameters({"browser", "url"})
     public void registerNewAccount(String browserName, String pageUrl) {
 
-        firstName = "Thu";
+        firstName = dataFaker.getFirstName();
 
-        lastName = "Minh";
+        lastName = dataFaker.getLastName();
 
-        email = "thuminh" + generateRandomNumber() + "@gmail.com";
+        email = dataFaker.getEmail();
 
         password = "123456";
 
@@ -41,10 +45,19 @@ public class Register_With_Cookie extends BaseTest {
         registerPage = pageInitManager.getRegisterPageObject(driver);
 
         registerPage.inputFirstName(firstName);
+        sleepInSeconds(2);
+
         registerPage.inputLastName(lastName);
+        sleepInSeconds(2);
+
         registerPage.inputEmail(email);
+        sleepInSeconds(2);
+
         registerPage.inputPassword(password);
+        sleepInSeconds(2);
+
         registerPage.inputConfirmPassword(password);
+        sleepInSeconds(2);
 
         homePage = registerPage.clickRegisterButton(driver);
 

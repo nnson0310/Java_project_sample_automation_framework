@@ -6,7 +6,7 @@
     <parameter name="url" value="https://demo.nopcommerce.com/register"></parameter>
     <classes>
       <!-- Always run before test -->
-<!--      <class name="com.nopcommerce.commons.Register_With_Cookie"></class>-->
+      <class name="com.nopcommerce.commons.Register_With_Cookie"></class>
       <class name="com.nopcommerce.user.User_07_Apply_Pattern_Object"/>
     </classes>
   </test>
