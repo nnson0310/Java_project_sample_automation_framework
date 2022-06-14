@@ -411,5 +411,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="joda-time-2.0" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.13.2" level="project" />
+    <orderEntry type="library" name="jackson-core-2.13.2" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.13.2.2" level="project" />
   </component>
 </module>

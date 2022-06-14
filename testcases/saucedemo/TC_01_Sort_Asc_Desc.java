@@ -6,6 +6,9 @@ import org.testng.annotations.*;
 import pageObjects.saucedemo.InventoryPageObject;
 import pageObjects.saucedemo.LoginPageObject;
 import pageObjects.saucedemo.PageGeneratorManager;
+import utilities.DataHelper;
+
+import java.util.List;
 
 public class TC_01_Sort_Asc_Desc extends BaseTest {
 
@@ -14,6 +17,8 @@ public class TC_01_Sort_Asc_Desc extends BaseTest {
     private String username, password;
 
     LoginPageObject loginPage;
+
+    List<DataHelper.User> users;
 
     InventoryPageObject inventoryPage;
 
@@ -24,17 +29,23 @@ public class TC_01_Sort_Asc_Desc extends BaseTest {
     public void setUp(String browserName, String pageUrl) {
         driver = getBrowserDriver(browserName, pageUrl);
 
-        username = "standard_user";
-        password = "secret_sauce";
+//        username = User.Credentials.username;
+//        password = User.Credentials.password;
 
-        loginPage = pageGeneratorManager.getLoginPageObject(driver);
-        loginPage.enterUsername(driver, username);
-        loginPage.enterPassword(driver, password);
-        inventoryPage = loginPage.clickLoginButton(driver);
+        users = DataHelper.getUsers();
+
+//        System.out.println(username);
+//        System.out.println(password);
+
+        users.forEach(user -> {
+            loginPage = pageGeneratorManager.getLoginPageObject(driver);
+            loginPage.enterUsername(driver, user.getUsername());
+            loginPage.enterPassword(driver, user.getPassword());
+            inventoryPage = loginPage.clickLoginButton(driver);
+        });
     }
 
     @Test
-
     public void TC_01() {
         inventoryPage.sortBySelectDropdown(driver, "Name (Z to A)");
         verifyTrue(inventoryPage.isProductNameSortedDescending(driver));
@@ -51,14 +62,12 @@ public class TC_01_Sort_Asc_Desc extends BaseTest {
 
         inventoryPage.sortBySelectDropdown(driver, "Price (low to high)");
         verifyTrue(inventoryPage.isProductPriceSortedAscending(driver));
-
     }
 
     @Test
     public void TC_03() {
-        inventoryPage.sortBySelectDropdown(driver, "Price (high to low)");
+        inventoryPage.sortBySelectDropdown(driver, "Price (low to high)");
         verifyTrue(inventoryPage.isProductPriceSortedAscending(driver));
-
     }
 
     @AfterClass(alwaysRun = true)
