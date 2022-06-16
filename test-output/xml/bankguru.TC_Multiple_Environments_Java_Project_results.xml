@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Firefox"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.045">
+  <properties />
+  
+  
+            <testcase name="TC_01" time="0.045" classname="bankguru.TC_Multiple_Environments_Java_Project" />
+      
+</testsuite>

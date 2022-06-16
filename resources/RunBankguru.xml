@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<suite name="saucedemo" parallel="false">
+<suite name="bankguru" parallel="false">
     <listeners>
         <listener class-name="reportConfig.MethodListener"></listener>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
         <listener class-name="reportConfig.ReportNGListener"/>
     </listeners>
+    <parameter name="environment" value="testing" ></parameter>
     <test name="Firefox" description="Run on firefox">
         <parameter name="browser" value="firefox"></parameter>
-        <parameter name="url" value="https://www.saucedemo.com/"></parameter>
         <classes>
             <class name="bankguru.TC_Multiple_Environments_Java_Project"/>
         </classes>
