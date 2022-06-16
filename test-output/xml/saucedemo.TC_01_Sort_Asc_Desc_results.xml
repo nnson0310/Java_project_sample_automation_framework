@@ -8,8 +8,8 @@
   <properties />
   
   
-            <testcase name="TC_02" time="0.712" classname="saucedemo.TC_01_Sort_Asc_Desc" />
-                <testcase name="TC_03" time="0.115" classname="saucedemo.TC_01_Sort_Asc_Desc" />
-                <testcase name="TC_01" time="0.796" classname="saucedemo.TC_01_Sort_Asc_Desc" />
+            <testcase name="TC_02" time="0.712" classname="bankguru.TC_Multiple_Environments_Java_Project" />
+                <testcase name="TC_03" time="0.115" classname="bankguru.TC_Multiple_Environments_Java_Project" />
+                <testcase name="TC_01" time="0.796" classname="bankguru.TC_Multiple_Environments_Java_Project" />
       
 </testsuite>

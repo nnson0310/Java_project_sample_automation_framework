@@ -10,7 +10,7 @@
         <parameter name="browser" value="firefox"></parameter>
         <parameter name="url" value="https://www.saucedemo.com/"></parameter>
         <classes>
-            <class name="saucedemo.TC_01_Sort_Asc_Desc"/>
+            <class name="bankguru.TC_Multiple_Environments_Java_Project"/>
         </classes>
     </test>
 </suite>
